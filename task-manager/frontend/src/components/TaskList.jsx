@@ -5,7 +5,7 @@ const TaskList = ({ tasks, fetchTasks, setSelectedTask }) => {
     const handleDelete = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:5000/api/tasks/${id}`, 
+            await axios.delete(`https://task-manager-kcdk.onrender.com/api/tasks/${id}`, 
             { headers: { Authorization: `Bearer ${token}` } });
             fetchTasks();
         } catch (error) {
